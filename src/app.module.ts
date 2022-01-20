@@ -1,9 +1,11 @@
+import { UsersController } from './users/users.controller';
+import { UsersService } from './users/users.service';
+import { JwtStrategy } from './guards/jwt.strategy';
 import { CommentsModule } from './classes/comments/comments.module';
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UsersController } from './users/users.controller';
 import { ClassesModule } from './classes/classes.module';
 import { JwtModule } from '@nestjs/jwt';
 import { UsersModule } from './users/users.module';
@@ -25,7 +27,7 @@ const DB_PASSWORD = encodeURIComponent('@123')
     }),
     ],
   controllers: [AppController, UsersController],
-  providers: [AppService],
+  providers: [AppService, JwtStrategy, UsersService],
   
 })
 export class AppModule {}

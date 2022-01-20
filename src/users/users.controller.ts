@@ -11,8 +11,13 @@ export class UsersController {
 
     }
 
+    // @Post()
+    // createUser(@Body() users: Users) {
+    //     return this.usersService.createUser(users);
+    // }
+
     @Post()
-    createUser(@Body() users: Users) {
-        return this.usersService.createUser(users);
+    login(@Body() user: Users) {
+        return this.usersService.login(user);
     }
 }

@@ -36,7 +36,7 @@ export class CommentsService {
         try {
 
             const limit = 50;
-            const skip = limit * (filter.page - 1);
+            const skip = limit * ((filter.page ? filter.page : 1)- 1);
             return this.commentsModel.find({id_classe}).skip(skip).limit(limit).exec(); 
             
         } catch (error) {

@@ -33,7 +33,7 @@ export class ClassesService {
         try {
 
             const limit = 50;
-            const skip = limit * (filter.page - 1);
+            const skip = limit * ((filter.page ? filter.page : 1)- 1);
             const lista = await this.classesModel.find({
                 name: {$regex: filter.name ? filter.name : ''},
                 description: {$regex: filter.description ? filter.description : ''},
