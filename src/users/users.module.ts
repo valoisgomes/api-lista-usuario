@@ -1,4 +1,3 @@
-import { JwtService } from '@nestjs/jwt';
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Users, UsersSchema } from './users.schema';

@@ -1,7 +1,8 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { timeStamp } from "console";
 import { Document, Schema as MongooseSchema, Types } from "mongoose";
 
-@Schema()
+@Schema({timestamps: true})
 export class Users extends Document{
     
     @Prop()
@@ -11,7 +12,23 @@ export class Users extends Document{
     email: string;
 
     @Prop()
-    password: string;
+    senha: string;
+
+    @Prop()
+    telefone: String;
+    
+    @Prop()
+    cpf: String;
+
+    @Prop()
+    nascimento: Date;
+
+    @Prop()
+    nomeMae: String;
+
+    @Prop()
+    status: boolean;
+
     
 }
 
